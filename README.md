@@ -9,7 +9,7 @@
 
 # MultiAuthApp
 
-A Laravel application implementing multi-way authentication (Admin and User).
+Here is a Laravel application implementing multi-way authentication (Admin and User) for a couple of my students at Localhost academy Yaounde.
 
 ## **Table of Contents**
 
@@ -38,22 +38,26 @@ Before setting up the project, make sure you have the following installed:
 ### 1. **Clone the Repository**
 
 To clone this project to your local machine, open a terminal and run:
+```bash
+git clone https://github.com/FOMUBAD-BORISTA-FONDI/MultiAuthApp.git
+```
 
-git clone https://github.com/YOUR_GITHUB_USERNAME/MultiAuthApp.git
+```bash
 cd MultiAuthApp
+```
 
 ### 2. **Install PHP Dependencies**
 
 Run the following command to install Laravel’s PHP dependencies using Composer:
-
+```bash
 composer install
-
+```
 ### 3. **Install Frontend Dependencies**
 
 You will need to install frontend dependencies using **npm** (Node.js package manager):
-
+```bash
 npm install
-
+```
 ---
 
 ## **Configuration**
@@ -61,38 +65,40 @@ npm install
 ### 1. **Create `.env` File**
 
 Laravel uses an `.env` file to manage environment-specific settings. To create the `.env` file, copy the example file:
-
+```bash
 cp .env.example .env
-
+```
 ### 2. **Generate Application Key**
 
 Laravel requires an application key. Run the following command to generate it:
-
+```bash
 php artisan key:generate
-
+```
 ### 3. **Set Up Database**
 
 Make sure you have MySQL (or MariaDB) running. Update your `.env` file with the correct database configuration:
 
+```bash
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=your_database_name
-DB_USERNAME=your_username
+DB_DATABASE=multi_auth_app
+DB_USERNAME=your_username(root)
 DB_PASSWORD=your_password
+```
 
 ### 4. **Migrate Database**
 
 Run migrations to set up the required tables in your database:
-
+```bash
 php artisan migrate
-
+```
 ### 5. **Seed the Database**
 
 You can seed the database with an admin user by running the following command:
-
+```bash
 php artisan db:seed --class=AdminSeeder
-
+```
 ---
 
 ## **Testing the Application**
@@ -101,8 +107,9 @@ php artisan db:seed --class=AdminSeeder
 
 Once everything is set up, you can start the Laravel development server:
 
+```bash
 php artisan serve
-
+```
 The application should now be available at `http://localhost:8000`.
 
 ### 2. **Access the Application**
