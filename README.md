@@ -61,6 +61,127 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
+
+# MultiAuthApp
+
+A Laravel application implementing multi-way authentication (Admin and User).
+
+## **Table of Contents**
+
+1. [Prerequisites](#prerequisites)
+2. [Installation](#installation)
+3. [Configuration](#configuration)
+4. [Testing the Application](#testing-the-application)
+5. [Usage](#usage)
+
+---
+
+## **Prerequisites**
+
+Before setting up the project, make sure you have the following installed:
+
+- **PHP (>= 8.0)**  
+- **Composer**  
+- **MySQL / MariaDB**  
+- **Node.js** (for frontend assets)  
+- **Git**
+
+---
+
+## **Installation**
+
+### 1. **Clone the Repository**
+
+To clone this project to your local machine, open a terminal and run:
+
+git clone https://github.com/YOUR_GITHUB_USERNAME/MultiAuthApp.git
+cd MultiAuthApp
+
+### 2. **Install PHP Dependencies**
+
+Run the following command to install Laravel’s PHP dependencies using Composer:
+
+composer install
+
+### 3. **Install Frontend Dependencies**
+
+You will need to install frontend dependencies using **npm** (Node.js package manager):
+
+npm install
+
+---
+
+## **Configuration**
+
+### 1. **Create `.env` File**
+
+Laravel uses an `.env` file to manage environment-specific settings. To create the `.env` file, copy the example file:
+
+cp .env.example .env
+
+### 2. **Generate Application Key**
+
+Laravel requires an application key. Run the following command to generate it:
+
+php artisan key:generate
+
+### 3. **Set Up Database**
+
+Make sure you have MySQL (or MariaDB) running. Update your `.env` file with the correct database configuration:
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database_name
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+
+### 4. **Migrate Database**
+
+Run migrations to set up the required tables in your database:
+
+php artisan migrate
+
+### 5. **Seed the Database**
+
+You can seed the database with an admin user by running the following command:
+
+php artisan db:seed --class=AdminSeeder
+
+---
+
+## **Testing the Application**
+
+### 1. **Start the Development Server**
+
+Once everything is set up, you can start the Laravel development server:
+
+php artisan serve
+
+The application should now be available at `http://localhost:8000`.
+
+### 2. **Access the Application**
+
+- **Admin Login:** The admin credentials can be found in the `AdminSeeder.php` file. By default, the admin user is:
+  - Email: `admin@example.com`
+  - Password: `password`
+  
+- **User Login:** You can register a user through the registration page or use the default user credentials.
+
+---
+
+## **Usage**
+
+- Admin users will be directed to the admin dashboard, while regular users will be directed to the user dashboard.
+- You can customize the user roles or authentication logic based on your needs.
+
+---
+
+## License**
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
